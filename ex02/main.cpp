@@ -2,11 +2,11 @@
 #include "Form.hpp"
 
 int main( void ){
-	std::cout << "//\tTESTING EXCEPTIONS:\t\n\n";
+	std::cout << "//\tTESTING FORMS:\t\n\n";
 	try
 	{
-		Bureaucrat tooHigh("tooHigh", 0);
-		std::cout << tooHigh << std::endl;
+		Form tooHigh1("tooHigh1", 0, 10);
+		std::cout << tooHigh1 << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -14,43 +14,41 @@ int main( void ){
 	}
 	try
 	{
-		Bureaucrat tooLow("tooLow", 151);
+		Form tooHigh2("tooHigh2", 10, 0);
+		std::cout << tooHigh2 << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Form tooLow("tooLow", 151, 151);
 		std::cout << tooLow << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "//\tTESTING INCREMENT:\t\n//HIGHEST\n";
+	std::cout << "//\tTESTING SIGNING FORMS:\t\n//signForm\n";
 	try
 	{
-		Bureaucrat highest("highest", 1);
-		std::cout << highest << std::endl;
-		highest.IncrementBureaucratGrade();
-		highest.DecrementBureaucratGrade();
+		Bureaucrat low("low", 40);
+		Form form("form", 10, 20);
+		low.signForm(form);
+		std::cout << low << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "//LOWEST\n";
+	std::cout << "\n//normal case\n";
 	try
 	{
-		Bureaucrat lowest("lowest", 150);
-		std::cout << lowest << std::endl;
-		lowest.DecrementBureaucratGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "//NORMAL\n";
-	try
-	{
-		Bureaucrat normal("normal", 100);
-		std::cout << normal << std::endl;
-		normal.DecrementBureaucratGrade();
-		normal.IncrementBureaucratGrade();
+		Bureaucrat high("high", 1);
+		Form form("form", 10, 20);
+		high.signForm(form);
+		std::cout << high << std::endl;
 	}
 	catch (std::exception &e)
 	{
