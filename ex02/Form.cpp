@@ -16,7 +16,7 @@ Form::Form( const Form &f ) : name(f.name), confirmed(false), gradeRequired(f.gr
 	std::cout << "Form Copy created!\n";
 }
 
-Form& Form::operator=( Form const &f ) {
+Form& Form::operator=( const Form &f ) {
 	std::cout << "Form Copy assigment called!\n";
 	if ( this != &f )
 		this->confirmed = f.confirmed;
@@ -43,16 +43,6 @@ int	Form::getRequiredGrade( void ) const{
 
 int	Form::getExecuteGrade( void ) const{
 	return (this->gradeExecute);
-}
-
-void	Form::beSigned( Bureaucrat const &b ){
-	if (b.getGrade() > this->gradeRequired)
-		throw GradeTooLowException();
-	else
-	{
-		this->confirmed = true;
-		std::cout << "Form " << name << " was signed by " << b.getName() << ".\n";
-	}
 }
 
 const char *Form::GradeTooHighException::what(void) const throw(){

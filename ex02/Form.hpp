@@ -1,9 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "Bureaucrat.hpp"
 
-class Bureaucrat;
 
 class Form{
 	private:
@@ -23,7 +21,6 @@ class Form{
 	bool		getConfirmed( void ) const;
 	int			getRequiredGrade( void ) const;
 	int			getExecuteGrade( void ) const;
-	void		beSigned( Bureaucrat const &b );
 
 	class GradeTooHighException : public std::exception
 	{
