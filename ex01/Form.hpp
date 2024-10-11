@@ -7,10 +7,10 @@ class Bureaucrat;
 
 class Form{
 	private:
-		std::string const	name;
+		std::string	const	name;
 		bool				confirmed;
-		int const			gradeRequired;
-		int const			gradeExecute;
+		int			const	gradeRequired;
+		int 		const	gradeExecute;
 
 	public:
 		Form( void );
@@ -32,6 +32,12 @@ class Form{
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class BureaucratGradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char *what() const throw();

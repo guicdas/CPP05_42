@@ -5,11 +5,11 @@ Bureaucrat::Bureaucrat( void ) : name("Bureaucrat"), grade(150){
 }
 
 Bureaucrat::Bureaucrat( std::string name, int grade ) : name(name){
-	std::cout << "Bureaucrat " + name + " created with " << grade << " grade!\n";
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
 		throw GradeTooLowException();
+	std::cout << "Bureaucrat " + name + " created with " << grade << " grade!\n";
 	this->grade = grade;
 }
 
@@ -22,8 +22,7 @@ Bureaucrat& Bureaucrat::operator=( const Bureaucrat &b ) {
 	std::cout << "Bureaucrat Copy assigment called!\n";
 	if ( this != &b )
 		this->grade = b.grade;
-	
-	//this->name = b.name;
+
 	return (*this);
 }
 
@@ -61,7 +60,7 @@ void Bureaucrat::DecrementBureaucratGrade( void ){
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw(){
-	return ("Grade is too high, highest grade possible is 1.\n");
+	return ("Bureaucrat Grade is too high, highest grade possible is 1.\n");
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw(){

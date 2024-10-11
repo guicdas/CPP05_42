@@ -1,27 +1,13 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( void ){
+PresidentialPardonForm::PresidentialPardonForm( void ) : AForm(){
+	this->target = "home";
 	std::cout << "PresidentialPardonForm created by default!\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ){
-	std::cout << "PresidentialPardonForm Copy created!\n";
-	*this = P;
-}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPardonForm &P ){
-	std::cout << "PresidentialPardonForm Copy created!\n";
-	if (this != &P)
-
-	return (*this);
-}
-
-PresidentialPardonForm::~PresidentialPardonForm( void ){
-	std::cout << "PresidentialPardonForm destroyed!\n";
-}
-
-50)
-		throw GradeTooLowException();
+PresidentialPardonForm::PresidentialPardonForm( std::string s ) : AForm(){
+	this->target = s;
+	std::cout << s << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ){
@@ -31,7 +17,6 @@ PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P 
 
 PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPardonForm &P ){
 	std::cout << "PresidentialPardonForm Copy created!\n";
-	if (this != &P)
 
 	return (*this);
 }

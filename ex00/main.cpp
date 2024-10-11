@@ -7,19 +7,13 @@ int main( void ){
 		Bureaucrat tooHigh("tooHigh", 0);
 		std::cout << tooHigh << std::endl;
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	catch (std::exception &e){std::cout << e.what() << std::endl;}
 	try
 	{
 		Bureaucrat tooLow("tooLow", 151);
 		std::cout << tooLow << std::endl;
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	catch (std::exception &e){std::cout << e.what() << std::endl;}
 	std::cout << "//\tTESTING INCREMENT:\t\n//HIGHEST\n";
 	try
 	{
@@ -28,10 +22,7 @@ int main( void ){
 		highest.IncrementBureaucratGrade();
 		highest.DecrementBureaucratGrade();
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	catch (std::exception &e){std::cout << e.what() << std::endl;}
 	std::cout << "//LOWEST\n";
 	try
 	{
@@ -39,10 +30,7 @@ int main( void ){
 		std::cout << lowest << std::endl;
 		lowest.DecrementBureaucratGrade();
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	catch (std::exception &e){std::cout << e.what() << std::endl;}
 	std::cout << "//NORMAL\n";
 	try
 	{
@@ -51,8 +39,5 @@ int main( void ){
 		normal.DecrementBureaucratGrade();
 		normal.IncrementBureaucratGrade();
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	catch (std::exception &e){std::cout << e.what() << std::endl;}
 }
