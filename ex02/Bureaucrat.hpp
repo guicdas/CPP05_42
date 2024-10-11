@@ -1,9 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
+#include <ctime>
 
-class Form;
+class AForm;
 
 class Bureaucrat{
 	private:
@@ -17,11 +18,12 @@ class Bureaucrat{
 		Bureaucrat& operator=( const Bureaucrat &b );
 		~Bureaucrat( void );
 
-	std::string		getName( void ) const;
-	int				getGrade( void ) const;
-	void 			IncrementBureaucratGrade( void );
-	void 			DecrementBureaucratGrade( void );
-	void			signForm(Form &form);
+	std::string	getName( void ) const;
+	int			getGrade( void ) const;
+	void 		IncrementBureaucratGrade( void );
+	void 		DecrementBureaucratGrade( void );
+	void		signForm(AForm &form);
+	void		executeForm(AForm const & form);
 
 	class GradeTooHighException : public std::exception
 	{

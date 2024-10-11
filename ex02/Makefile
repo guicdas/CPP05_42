@@ -1,10 +1,13 @@
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 
 RM				= rm -fr
-INC				= Bureaucrat.hpp AForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+INC				= Bureaucrat.hpp AForm.hpp RobotomyRequestForm.hpp \
+					PresidentialPardonForm.hpp ShrubberyCreationForm.hpp
+
 NAME			= 28B
 
-SOURCES			= main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SOURCES			= main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp \
+					PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
 
 SOURCES_O		= $(SOURCES:.cpp=.o)
 

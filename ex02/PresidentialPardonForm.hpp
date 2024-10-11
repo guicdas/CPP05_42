@@ -6,8 +6,8 @@
 class PresidentialPardonForm : public AForm
 {
 	private:
-		int	const	sign = 25;
-		int	const	exec = 5;
+		int	const	sign;
+		int	const	exec;
 		std::string	target;
 	public:
 		PresidentialPardonForm( void );
@@ -15,4 +15,6 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm( const PresidentialPardonForm &P );
 		PresidentialPardonForm& operator=( const PresidentialPardonForm &P );
 		~PresidentialPardonForm( void );
+
+	void	ExecuteAction(void);
 };

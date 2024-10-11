@@ -2,13 +2,13 @@
 
 #include <iostream>
 #include "AForm.hpp"
-#include <ctime>
+#include <stdlib.h>
 
 class RobotomyRequestForm : public AForm
 {
 	private:
-		int	const	sign = 72;
-		int	const	exec = 45;
+		int	const	sign;
+		int	const	exec;
 		std::string	target;
 	public:
 		RobotomyRequestForm( void );
@@ -16,4 +16,6 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm( const RobotomyRequestForm &R );
 		RobotomyRequestForm& operator=( const RobotomyRequestForm &R );
 		~RobotomyRequestForm( void );
+
+	void	ExecuteAction( void );
 };

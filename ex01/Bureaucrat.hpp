@@ -12,7 +12,7 @@ class Bureaucrat{
 
 	public:
 		Bureaucrat( void );
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat( std::string name, int grade );
 		Bureaucrat( const Bureaucrat &b );
 		Bureaucrat& operator=( const Bureaucrat &b );
 		~Bureaucrat( void );
