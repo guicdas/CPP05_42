@@ -6,9 +6,9 @@ Bureaucrat::Bureaucrat( void ) : name("Bureaucrat"), grade(150){
 
 Bureaucrat::Bureaucrat( std::string name, int grade ) : name(name){
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw (GradeTooHighException());
 	else if (grade > 150)
-		throw GradeTooLowException();
+		throw (GradeTooLowException());
 	std::cout << "Bureaucrat " + name + " created with " << grade << " grade!\n";
 	this->grade = grade;
 }
