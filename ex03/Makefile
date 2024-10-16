@@ -4,7 +4,7 @@ RM				= rm -fr
 INC				= Bureaucrat.hpp AForm.hpp RobotomyRequestForm.hpp \
 					PresidentialPardonForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
-NAME			= coffeeMaking
+NAME			= coffee_making
 
 SOURCES			= main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp \
 					PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Intern.cpp
