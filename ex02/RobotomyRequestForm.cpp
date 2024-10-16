@@ -36,13 +36,11 @@ void RobotomyRequestForm::execute( Bureaucrat const & executor ) const{
 	
 	if (executor.getGrade() > this->exec)
 		throw (BureaucratGradeTooLowException());
+	std::cout << "*Makes drilling noises*\n";
+	chance = rand() % 99;
+	if (chance > 49)
+		std::cout << this->target << " has been robotomized successfully (chance: "<< chance << ")\n";
 	else
-	{
-		std::cout << "*Makes drilling noises*\n";
-		chance = rand() % 99;
-		if (chance > 49)
-			std::cout << this->target << " has been robotomized successfully (chance: "<< chance << ")\n";
-		else
-			std::cout << "Robotomy failed (chance: "<< chance << ")\n";
-	}
+		std::cout << "Robotomy failed (chance: "<< chance << ")\n";
+
 }

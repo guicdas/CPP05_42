@@ -15,6 +15,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string s ) : AForm("PPF", 2
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ) : AForm(P), sign(25), exec(5){
 	std::cout << "PresidentialPardonForm Copy created!\n";
+
 	*this = P;
 }
 
@@ -22,6 +23,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPar
 	std::cout << "PresidentialPardonForm Copy created!\n";
 	if (this != &P)
 		this->target = P.target;
+
 	return (*this);
 }
 
@@ -32,6 +34,5 @@ PresidentialPardonForm::~PresidentialPardonForm( void ){
 void PresidentialPardonForm::execute( Bureaucrat const & executor ) const{
 	if (executor.getGrade() > this->exec)
 		throw (BureaucratGradeTooLowException());
-	else
-		std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	}
+	std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+}

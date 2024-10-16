@@ -47,11 +47,8 @@ int	Form::getExecuteGrade( void ) const{
 void	Form::beSigned( Bureaucrat const &b ){
 	if (b.getGrade() > this->gradeRequired)
 		throw (BureaucratGradeTooLowException());
-	else
-	{
-		this->confirmed = true;
-		std::cout << "Form " << name << " was signed by " << b.getName() << ".\n";
-	}
+	this->confirmed = true;
+	std::cout << "Form " << name << " was signed by " << b.getName() << ".\n";
 }
 
 const char *Form::GradeTooHighException::what(void) const throw(){
