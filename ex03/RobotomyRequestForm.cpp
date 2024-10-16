@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm( void ) : AForm("RRF", 72, 45), sign(72
 
 RobotomyRequestForm::RobotomyRequestForm( std::string s ) : AForm("RRF", 72, 45), sign(72), exec(45){
 	this->target = s;
-	std::cout << "PresidentialPardonForm created with:\n\t" \
+	std::cout << "RobotomyRequestForm created with:\n\t" \
 	<< "Sign Grade:\t\t"<< this->sign \
 	<< "\n\tExecution Grade:\t" << this->exec \
 	<< "\n\tTarget: \t\t" << this->target << std::endl;

@@ -20,25 +20,25 @@ Intern::~Intern( void ){
 	std::cout << "Intern destroyed!\n";
 }
 
-AForm *Intern::makeForm( std::string s1, std::string s2 ) const{
-	try 
-	{
-		if (s1.length() < 1)
-			throw (EmptyStringException());
-		std::cout << "Intern creates " << s1 << " with " << s2 << " as target" << std::endl;
-		if (strcmp(s1, "shrubbery request") == 0)
-		{
-			ShrubberyCreationForm scf(s2);
-			return (scf);
-		}
-		else if (strcmp(s1, "") == 0)
+static	AForm *makeFormSCF( std::string s ){return (new ShrubberyCreationForm(s));}
+static	AForm *makeFormPPF( std::string s ){return (new PresidentialPardonForm(s));}
+static	AForm *makeFormRRF( std::string s ){return (new RobotomyRequestForm(s));}
 
-		else if ()
+AForm *Intern::makeForm( std::string s1, std::string s2 ) const{
+	AForm * (*formCreators[])(std::string s) = {&makeFormSCF, &makeFormRRF, &makeFormPPF};
+	std::string formNames[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+
+	for (int i = 0; i < 3; i++)
+	{
+		if (strcmp(formNames[i].c_str(), s1.c_str()) == 0)
+		{
+			std::cout << i << " Intern creates " << s1 << " with " << s2 << " as target" << std::endl;
+			return (formCreators[i](s2));
+		}
 	}
-	catch (std::exception &e){std::cout << e.what() << std::endl;}
-	return (NULL);
+	throw (EmptyStringException());
 }
 
 const char *Intern::EmptyStringException::what(void) const throw(){
-	return ("Form name cannot be empty!");
+	return ("Form name doesn't match any available form types!");
 }
