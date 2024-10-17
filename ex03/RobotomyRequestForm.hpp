@@ -1,11 +1,11 @@
 #pragma once
 
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 #include <stdlib.h>
 #include "Bureaucrat.hpp"
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
 	private:
 		int	const	sign;

@@ -59,7 +59,7 @@ void Bureaucrat::DecrementBureaucratGrade( void ){
 	}
 }
 
-void	Bureaucrat::signForm(AForm &form)
+void	Bureaucrat::signForm(Form &form)
 {
 	try
 	{
@@ -72,7 +72,7 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 }
 
-void	Bureaucrat::executeForm(AForm const & form)
+void	Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{

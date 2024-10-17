@@ -1,11 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( void ) : AForm("RRF", 72, 45), sign(72), exec(45){
+RobotomyRequestForm::RobotomyRequestForm( void ) : Form("RRF", 72, 45), sign(72), exec(45){
 	this->target = "home";
 	std::cout << "RobotomyRequestForm created by default!\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm( std::string s ) : AForm("RRF", 72, 45), sign(72), exec(45){
+RobotomyRequestForm::RobotomyRequestForm( std::string s ) : Form("RRF", 72, 45), sign(72), exec(45){
 	this->target = s;
 	std::cout << "RobotomyRequestForm created with:\n\t" \
 	<< "Sign Grade:\t\t"<< this->sign \
@@ -13,7 +13,7 @@ RobotomyRequestForm::RobotomyRequestForm( std::string s ) : AForm("RRF", 72, 45)
 	<< "\n\tTarget: \t\t" << this->target << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &r ) : AForm(r), sign(72), exec(45){
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &r ) : Form(r), sign(72), exec(45){
 	std::cout << "RobotomyRequestForm Copy created!\n";
 	*this = r;
 }

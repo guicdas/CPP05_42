@@ -6,13 +6,7 @@
 
 int main( void ){
 
-	std::cout << "//\tTESTING FORMS:\t\n\n";
-	try
-	{
-		AForm form("form", 0, 10);
-		std::cout << form << std::endl;
-	}
-	catch (std::exception &e){std::cout << e.what() << std::endl;}
+	//AForm form("form", 0, 10);
 	std::cout << "//\tTESTING SIGNING FORMS:\n//\tSIGN\n";
 	try
 	{

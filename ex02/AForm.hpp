@@ -12,13 +12,15 @@ class AForm{
 		int const			gradeRequired;
 		int const			gradeExecute;
 
-	public:
+	protected:
 		AForm( void );
 		AForm( const std::string name );
 		AForm( const std::string name, const int gradeR, const int gradeExe );
 		AForm( const AForm &f );
 		AForm& operator=( const AForm &f );
 		virtual ~AForm( void );
+
+	public:
 
 	std::string	getName( void ) const;
 	bool		getConfirmed( void ) const;

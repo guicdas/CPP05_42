@@ -36,11 +36,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 
 	if (executor.getGrade() > this->exec)
 		throw (BureaucratGradeTooLowException());
-
-	std::ofstream	file(filename.c_str());
-	i = rand() % 3 + 1;;
+	i = rand() % 3 + 1;
 	filename += target;
 	filename += "_shrubbery";
+	std::ofstream	file(filename.c_str());
 	if (i == 1)
 		file << "             _{\\ _{\\{\\/}/}/}__\n\
 			{/{/\\}{/{/\\}(\\}{/\\} _\n\

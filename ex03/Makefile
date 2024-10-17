@@ -1,12 +1,12 @@
 CXX				= c++
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM				= rm -fr
 INC				= Bureaucrat.hpp AForm.hpp RobotomyRequestForm.hpp \
 					PresidentialPardonForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
 NAME			= coffee_making
 
-SOURCES			= main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp \
+SOURCES			= main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp \
 					PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 SOURCES_O		= $(SOURCES:.cpp=.o)

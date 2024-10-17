@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
 	private:
 		int	const	sign;

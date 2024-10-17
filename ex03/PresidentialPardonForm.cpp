@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( void ) : AForm("PPF", 25, 5), sign(25), exec(5){
+PresidentialPardonForm::PresidentialPardonForm( void ) : Form("PPF", 25, 5), sign(25), exec(5){
 	this->target = "home";
 	std::cout << "PresidentialPardonForm created by default!\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm( std::string s ) : AForm("PPF", 25, 5), sign(25), exec(5){
+PresidentialPardonForm::PresidentialPardonForm( std::string s ) : Form("PPF", 25, 5), sign(25), exec(5){
 	this->target = s;
 	std::cout << "PresidentialPardonForm created with:\n\t" \
 	<< "Sign Grade:\t\t"<< this->sign \
@@ -13,7 +13,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string s ) : AForm("PPF", 2
 	<< "\n\tTarget: \t\t" << this->target << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ) : AForm(P), sign(25), exec(5){
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ) : Form(P), sign(25), exec(5){
 	std::cout << "PresidentialPardonForm Copy created!\n";
 	*this = P;
 }

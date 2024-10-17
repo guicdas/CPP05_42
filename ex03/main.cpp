@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -11,7 +11,7 @@ int main( void ){
 	try
 	{
 		Intern someRandomIntern;
-		AForm *RRF;
+		Form *RRF;
 
 		RRF = someRandomIntern.makeForm("", "bender");
 	}
@@ -20,7 +20,7 @@ int main( void ){
 	try
 	{
 		Intern someRandomIntern;
-		AForm *RRF;
+		Form *RRF;
 
 		RRF = someRandomIntern.makeForm("rrf", "bender");
 	}
@@ -29,7 +29,7 @@ int main( void ){
 	try
 	{
 		Intern someRandomIntern;
-		AForm *RRF;
+		Form *RRF;
 
 		RRF = someRandomIntern.makeForm("robotomy request", "bender");
 		delete RRF;
@@ -39,7 +39,7 @@ int main( void ){
 	try
 	{
 		Intern someRandomIntern;
-		AForm *SCF;
+		Form *SCF;
 
 		SCF = someRandomIntern.makeForm("shrubbery creation", "bender");
 		delete SCF;
@@ -49,7 +49,7 @@ int main( void ){
 	try
 	{
 		Intern someRandomIntern;
-		AForm *PPF;
+		Form *PPF;
 
 		PPF = someRandomIntern.makeForm("presidential pardon", "bender");
 		delete PPF;

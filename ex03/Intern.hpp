@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <cstring>
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -16,7 +16,7 @@ class Intern{
 		Intern& operator=( const Intern &I );
 		~Intern( void );
 
-	AForm *makeForm( std::string s1, std::string s2 ) const;
+	Form *makeForm( std::string s1, std::string s2 ) const;
 
 	class EmptyStringException : public std::exception
 	{

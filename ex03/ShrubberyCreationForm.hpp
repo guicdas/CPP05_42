@@ -1,12 +1,12 @@
 #pragma once
 
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 #include <fstream>
 #include <stdlib.h>
 #include "Bureaucrat.hpp"
 
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
 	private:
 		int	const	sign;
