@@ -42,32 +42,26 @@ int	Bureaucrat::getGrade( void ) const{
 void Bureaucrat::IncrementBureaucratGrade( void ){
 	if (this->grade == 1)
 		throw (GradeTooHighException());
-	else
-	{
-		this->grade--;
-		std::cout << "INCREMENT: " << this->name << "'s grade is now " << this->grade << std::endl;
-	}
+	this->grade--;
+	std::cout << "INCREMENT: " << this->name << "'s grade is now " << this->grade << std::endl;
 }
 
 void Bureaucrat::DecrementBureaucratGrade( void ){
 	if (this->grade == 150)
 		throw (GradeTooLowException());
-	else
-	{
-		this->grade++;
-		std::cout << "DECREMENT: " << this->name << "'s grade is now " << this->grade << std::endl;
-	}
+	this->grade++;
+	std::cout << "DECREMENT: " << this->name << "'s grade is now " << this->grade << std::endl;
 }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw(){
+const char *Bureaucrat::GradeTooHighException::what( void ) const throw(){
 	return ("Bureaucrat Grade is too high, highest grade possible is 1.\n");
 }
 
-const char *Bureaucrat::GradeTooLowException::what(void) const throw(){
+const char *Bureaucrat::GradeTooLowException::what( void ) const throw(){
 	return ("Grade is too low, lowest grade possible is 150.\n");
 }
 
-std::ostream &operator<<(std::ostream & os, Bureaucrat const &other){
+std::ostream &operator<<( std::ostream & os, Bureaucrat const &other ){
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;
 	return (os);
 }
