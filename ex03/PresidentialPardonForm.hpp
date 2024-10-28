@@ -7,15 +7,15 @@
 class PresidentialPardonForm : public Form
 {
 	private:
+		std::string	target;
 		int	const	sign;
 		int	const	exec;
-		std::string	target;
 	public:
 		PresidentialPardonForm( void );
-		PresidentialPardonForm( std::string s );
-		PresidentialPardonForm( const PresidentialPardonForm &P );
-		PresidentialPardonForm& operator=( const PresidentialPardonForm &P );
+		PresidentialPardonForm( std::string );
+		PresidentialPardonForm( PresidentialPardonForm const & );
+		PresidentialPardonForm& operator=( PresidentialPardonForm const & );
 		~PresidentialPardonForm( void );
 
-	virtual void		execute(Bureaucrat const & executor) const;
+	virtual void		execute( Bureaucrat const & ) const;
 };

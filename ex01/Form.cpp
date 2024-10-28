@@ -4,7 +4,7 @@ Form::Form( void ) : name("Form"), confirmed(false), gradeRequired(150), gradeEx
 	std::cout << "Form created by default!\n";
 }
 
-Form::Form( const std::string name, const int gradeR, const int gradeExe ) : name(name), confirmed(false), gradeRequired(gradeR), gradeExecute(gradeExe){
+Form::Form( std::string const name, int const gradeR, int const gradeExe ) : name(name), confirmed(false), gradeRequired(gradeR), gradeExecute(gradeExe){
 	if (gradeRequired < 1 || gradeExe < 1)
 		throw (GradeTooHighException());
 	else if (gradeRequired > 150 || gradeExe > 150)
@@ -12,7 +12,7 @@ Form::Form( const std::string name, const int gradeR, const int gradeExe ) : nam
 	std::cout << "Form " + name + " created with a " << gradeR << " required grade to sign, and a " << gradeExe << " to execute it.\n";
 }
 
-Form::Form( const Form &f ) : name(f.name), confirmed(false), gradeRequired(f.gradeRequired), gradeExecute(f.gradeExecute){
+Form::Form( Form const &f ) : name(f.name), confirmed(false), gradeRequired(f.gradeRequired), gradeExecute(f.gradeExecute){
 	std::cout << "Form Copy created!\n";
 }
 

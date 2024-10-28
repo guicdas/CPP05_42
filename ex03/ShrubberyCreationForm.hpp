@@ -9,15 +9,16 @@
 class ShrubberyCreationForm : public Form
 {
 	private:
+		std::string	target;
 		int	const	sign;
 		int	const	exec;
-		std::string	target;
+
 	public:
 		ShrubberyCreationForm( void );
-		ShrubberyCreationForm( std::string s );
-		ShrubberyCreationForm( const ShrubberyCreationForm &S );
-		ShrubberyCreationForm& operator=( const ShrubberyCreationForm &S );
+		ShrubberyCreationForm( std::string );
+		ShrubberyCreationForm( ShrubberyCreationForm const & );
+		ShrubberyCreationForm& operator=( ShrubberyCreationForm const & );
 		~ShrubberyCreationForm( void );
 	
-	virtual void	execute(Bureaucrat const & executor) const;
+	virtual void	execute( Bureaucrat const & ) const;
 };

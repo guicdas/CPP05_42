@@ -4,11 +4,11 @@ AForm::AForm( void ) : name("AForm"), confirmed(false), gradeRequired(150), grad
 	std::cout << "AForm created by default!\n";
 }
 
-AForm::AForm( const std::string name ) : name(name), confirmed(false), gradeRequired(5), gradeExecute(5){
+AForm::AForm( std::string const name ) : name(name), confirmed(false), gradeRequired(5), gradeExecute(5){
 	std::cout << "AForm " + name + " created.\n";
 }
 
-AForm::AForm( const std::string name, const int gradeR, const int gradeExe ) : name(name), confirmed(false), gradeRequired(gradeR), gradeExecute(gradeExe){
+AForm::AForm( std::string const name, int const gradeR, int const gradeExe ) : name(name), confirmed(false), gradeRequired(gradeR), gradeExecute(gradeExe){
 	if (gradeR < 1 || gradeExe < 1)
 		throw( GradeTooHighException());
 	else if (gradeR > 150 || gradeExe > 150)
@@ -16,7 +16,7 @@ AForm::AForm( const std::string name, const int gradeR, const int gradeExe ) : n
 	std::cout << "AForm " + name + " created with a " << gradeR << " required grade to sign, and a " << gradeExe << " to execute it.\n";
 }
 
-AForm::AForm( const AForm &f ) : name(f.name), confirmed(false), gradeRequired(f.gradeRequired), gradeExecute(f.gradeExecute){
+AForm::AForm( AForm const &f ) : name(f.name), confirmed(false), gradeRequired(f.gradeRequired), gradeExecute(f.gradeExecute){
 	std::cout << "AForm Copy created!\n";
 }
 
@@ -55,26 +55,26 @@ void	AForm::beSigned( Bureaucrat const &b ){
 		this->confirmed = true;
 }
 
-void	AForm::execute(Bureaucrat const & executor) const{
+void	AForm::execute( Bureaucrat const & executor ) const{
 	if (executor.getGrade() > this->gradeExecute)
 		throw (BureaucratGradeTooLowException());
 	else
 		std::cout << "Nothing happened." << std::endl;
 }
 
-const char *AForm::GradeTooHighException::what(void) const throw(){
+const char *AForm::GradeTooHighException::what( void ) const throw(){
 	return ("Form Grade is too high, highest grade possible is 1.\n");
 }
 
-const char *AForm::GradeTooLowException::what(void) const throw(){
+const char *AForm::GradeTooLowException::what( void ) const throw(){
 	return ("Form Grade is too low, lowest grade possible is 150.\n");
 }
 
-const char *AForm::BureaucratGradeTooLowException::what(void) const throw(){
+const char *AForm::BureaucratGradeTooLowException::what( void ) const throw(){
 	return ("Bureaucrat grade is too low to sign it.");
 }
 
-std::ostream &operator<<(std::ostream & os, AForm const &f){
+std::ostream &operator<<( std::ostream & os, AForm const &f ){
 	os << "Form " << f.getName();
 	if (f.getConfirmed())
 		os << ":\n\tSigned.";

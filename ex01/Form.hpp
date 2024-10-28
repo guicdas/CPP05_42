@@ -8,22 +8,22 @@ class Bureaucrat;
 class Form{
 	private:
 		std::string	const	name;
-		bool				confirmed;
 		int			const	gradeRequired;
 		int 		const	gradeExecute;
+		bool				confirmed;
 
 	public:
 		Form( void );
-		Form( const Form &f );
-		Form( const std::string name, const int gradeR, const int gradeExe );
-		Form& operator=( const Form &f );
+		Form( Form const & );
+		Form( std::string const, int const, int const );
+		Form& operator=( Form const & );
 		~Form( void );
 
 	std::string	getName( void ) const;
 	bool		getConfirmed( void ) const;
 	int			getRequiredGrade( void ) const;
 	int			getExecuteGrade( void ) const;
-	void		beSigned( Bureaucrat const &b );
+	void		beSigned( Bureaucrat const & );
 
 	class GradeTooHighException : public std::exception
 	{
@@ -44,4 +44,4 @@ class Form{
 	};
 };
 
-std::ostream &operator<<(std::ostream & os, Form const &form);
+std::ostream &operator<<( std::ostream & , Form const & );

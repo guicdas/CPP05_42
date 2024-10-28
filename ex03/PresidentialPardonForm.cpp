@@ -13,12 +13,12 @@ PresidentialPardonForm::PresidentialPardonForm( std::string s ) : Form("PPF", 25
 	<< "\n\tTarget: \t\t" << this->target << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &P ) : Form(P), sign(25), exec(5){
+PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const &P ) : Form(P), sign(25), exec(5){
 	std::cout << "PresidentialPardonForm Copy created!\n";
 	*this = P;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPardonForm &P ){
+PresidentialPardonForm& PresidentialPardonForm::operator=( PresidentialPardonForm const &P ){
 	std::cout << "PresidentialPardonForm Copy created!\n";
 	if (this != &P)
 		this->target = P.target;

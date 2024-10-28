@@ -13,12 +13,12 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : name(name){
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &b ){
+Bureaucrat::Bureaucrat( Bureaucrat const &b ){
 	std::cout << "Bureaucrat Copy created!\n";
 	*this = b;
 }
 
-Bureaucrat& Bureaucrat::operator=( const Bureaucrat &b ) {
+Bureaucrat& Bureaucrat::operator=( Bureaucrat const &b ) {
 	std::cout << "Bureaucrat Copy assigment called!\n";
 	if ( this != &b )
 		this->grade = b.grade;
@@ -54,7 +54,7 @@ void Bureaucrat::DecrementBureaucratGrade( void ){
 
 }
 
-void	Bureaucrat::signForm(AForm &form)
+void	Bureaucrat::signForm( AForm &form )
 {
 	try
 	{
@@ -67,7 +67,7 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 }
 
-void	Bureaucrat::executeForm(AForm const & form)
+void	Bureaucrat::executeForm( AForm const & form )
 {
 	try
 	{
@@ -80,15 +80,15 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw(){
+const char *Bureaucrat::GradeTooHighException::what( void ) const throw(){
 	return ("Bureaucrat Grade is too high, highest grade possible is 1.\n");
 }
 
-const char *Bureaucrat::GradeTooLowException::what(void) const throw(){
+const char *Bureaucrat::GradeTooLowException::what( void ) const throw(){
 	return ("Bureaucrat Grade is too low, lowest grade possible is 150.\n");
 }
 
-std::ostream &operator<<(std::ostream & os, Bureaucrat const &b){
+std::ostream &operator<<( std::ostream & os, Bureaucrat const &b ){
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
 	return (os);
 }

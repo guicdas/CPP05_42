@@ -12,12 +12,12 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string s ) : AForm("SCF", 145
 	<< "\n\tTarget: \t\t" << this->target << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &S ) : AForm(S), sign(145), exec(137){
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &S ) : AForm(S), sign(145), exec(137){
 	std::cout << "ShrubberyCreationForm Copy created!\n";
 	*this = S;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm &S ){
+ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm const &S ){
 	std::cout << "ShrubberyCreationForm Copy created!\n";
 	if (this != &S)
 		this->target = S.target;
@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void ){
 	std::cout << "ShrubberyCreationForm destroyed!\n";
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
+void	ShrubberyCreationForm::execute( Bureaucrat const & executor ) const{
 	std::string		filename;
 	int				i;
 	std::srand(time(0));

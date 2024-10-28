@@ -13,12 +13,12 @@ RobotomyRequestForm::RobotomyRequestForm( std::string s ) : Form("RRF", 72, 45),
 	<< "\n\tTarget: \t\t" << this->target << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &r ) : Form(r), sign(72), exec(45){
+RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const &r ) : Form(r), sign(72), exec(45){
 	std::cout << "RobotomyRequestForm Copy created!\n";
 	*this = r;
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=( const RobotomyRequestForm &r ){
+RobotomyRequestForm& RobotomyRequestForm::operator=( RobotomyRequestForm const &r ){
 	std::cout << "RobotomyRequestForm Copy created!\n";
 	if (this != &r)
 		this->target = r.target;

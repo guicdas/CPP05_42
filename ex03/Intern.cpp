@@ -4,12 +4,12 @@ Intern::Intern( void ){
 	std::cout << "Intern created by default!\n";
 }
 
-Intern::Intern( const Intern &I ){
+Intern::Intern( Intern const &I ){
 	std::cout << "Intern Copy created!\n";
 	*this = I;
 }
 
-Intern& Intern::operator=( const Intern &I ){
+Intern& Intern::operator=( Intern const &I ){
 	std::cout << "Intern Copy created!\n";
 	(void) I;
 

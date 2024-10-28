@@ -8,15 +8,13 @@
 #include "ShrubberyCreationForm.hpp"
 
 class Intern{
-	private:
-
 	public:
 		Intern( void );
-		Intern( const Intern &I );
-		Intern& operator=( const Intern &I );
+		Intern( Intern const & );
+		Intern& operator=( Intern const & );
 		~Intern( void );
 
-	Form *makeForm( std::string s1, std::string s2 ) const;
+	Form *makeForm( std::string , std::string ) const;
 
 	class EmptyStringException : public std::exception
 	{
